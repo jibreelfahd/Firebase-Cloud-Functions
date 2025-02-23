@@ -16,7 +16,7 @@ export const checkUserDomain = beforeUserCreated((event) => {
 });
 
 // Prevent banned users from signing in
-export const prevetBannedUsers = beforeUserSignedIn(async (event) => {
+export const preventBannedUsers = beforeUserSignedIn(async (event) => {
   const uid = event.data?.uid as string;
 
   const bannedUser = await getAuth().getUser(uid);
