@@ -3,7 +3,7 @@ import {logger} from "firebase-functions";
 import {HttpsError} from "firebase-functions/https";
 
 export const onUserCreated = functions.auth.user().onCreate((user) => {
-  if (!user.emailVerified) {
+  if (!user.emailVerified && user.disabled) {
     logger.warn("Email not verified");
     throw new HttpsError("permission-denied", "Email is not valid");
   }
