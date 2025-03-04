@@ -17,9 +17,9 @@ export const checkUserDomain = beforeUserCreated((event) => {
 
 // Prevent banned users from signing in
 export const preventBannedUsers = beforeUserSignedIn(async (event) => {
-  const uid = event.data?.uid as string;
+  const userEmail = event.data?.email as string;
 
-  const bannedUser = await getAuth().getUser(uid);
+  const bannedUser = await getAuth().getUserByEmail(userEmail);
 
   if (bannedUser.customClaims?.banned) {
     throw new HttpsError("permission-denied",
