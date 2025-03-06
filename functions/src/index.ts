@@ -8,3 +8,4 @@ export {onDeleteUser} from "./auth-triggers/auth-triggers";
 export {onDocCreated} from "./firestore-triggers/index";
 export {onDocUpdated} from "./firestore-triggers/index";
 export {onDocDeleted} from "./firestore-triggers/index";
+export {onWriteToFirestore} from "./firestore-triggers/index";

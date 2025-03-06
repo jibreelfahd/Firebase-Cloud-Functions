@@ -33,3 +33,27 @@ export const onDocDeleted = onDocumentDeleted("users/{userID}", (event) => {
   }
   logger.info("User Deleted", userData);
 });
+
+export const onWriteToFirestore = 
+onDocumentUpdated("users/{userID}", (event) => {
+  const newData = event.data?.after.data();
+  const prevData = event.data?.before.data();
+
+  if (newData?.email === prevData?.email) {
+    return null;
+  }
+
+  let count = newData?.name_change_count;
+
+  if (!count) {
+    count = 0;
+  }
+
+  if (event.data?.after) {
+    return event.data.after.ref.set({
+      name_change_count: count + 1,
+    }, {merge: true});
+  }
+  
+  return null;
+});
