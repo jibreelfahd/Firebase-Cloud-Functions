@@ -11,6 +11,7 @@ export {onDocCreated} from "./firestore-triggers/index";
 export {onDocUpdated} from "./firestore-triggers/index";
 export {onDocDeleted} from "./firestore-triggers/index";
 export {onWriteToFirestore} from "./firestore-triggers/index";
+export {onDataCreated} from "./realtime-triggers/index";
 
 // adding items to realtime database in the path /users/{uid}
 // (async () => {
@@ -19,5 +20,4 @@ export {onWriteToFirestore} from "./firestore-triggers/index";
 //   await addToDatabase("air force");
 //   await addToDatabase("puma");
 //   process.exit(0);
-// })();
-export {onDataCreated} from "./realtime-triggers/index";
+// })().catch((err) => console.log(err));
