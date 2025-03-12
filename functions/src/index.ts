@@ -11,13 +11,14 @@ export {onDocCreated} from "./firestore-triggers/index";
 export {onDocUpdated} from "./firestore-triggers/index";
 export {onDocDeleted} from "./firestore-triggers/index";
 export {onWriteToFirestore} from "./firestore-triggers/index";
-export {onDataCreated} from "./realtime-triggers/index";
+export {onDataUpdated} from "./realtime-triggers/index";
+export {onDataDeleted} from "./realtime-triggers/index";
 
 // adding items to realtime database in the path /users/{uid}
 // (async () => {
 //   await addToDatabase("nike");
-//   await addToDatabase("adiddas");
-//   await addToDatabase("air force");
 //   await addToDatabase("puma");
+//   await addToDatabase("air force");
+//   await addToDatabase("slide");
 //   process.exit(0);
 // })().catch((err) => console.log(err));
