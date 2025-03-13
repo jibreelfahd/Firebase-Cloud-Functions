@@ -14,7 +14,7 @@ export {onWriteToFirestore} from "./firestore-triggers/index";
 export {onDataUpdated} from "./realtime-triggers/index";
 export {onDataDeleted} from "./realtime-triggers/index";
 
-// adding items to realtime database in the path /users/{uid}
+// adding items to realtime database in the path /users/{uid}/original
 // (async () => {
 //   await addToDatabase("nike");
 //   await addToDatabase("puma");
