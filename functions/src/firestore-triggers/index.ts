@@ -20,7 +20,6 @@ export const onDocUpdated = onDocumentUpdated("users/{userID}", (event) => {
   const userDataBeforeChange = event.data?.before.data();
   const userDataAfterChange = event.data?.after.data();
 
-  logger.info("User updated", userDataBeforeChange, userDataAfterChange);
   logger.info("User Parameters", userID);
 });
 
