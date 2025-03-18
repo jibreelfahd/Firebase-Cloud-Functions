@@ -10,7 +10,7 @@ export const checkUserDomain = beforeUserCreated((event) => {
   if (!user?.email?.includes("@gmail.com") && !user?.emailVerified) {
     logger.log("Invalid Parameters", user?.email);
     throw new HttpsError("invalid-argument", 
-      "Value Incorrect, check email and try again");
+      "Value Incorrect, check email and try again.");
   }
   return user;
 });
