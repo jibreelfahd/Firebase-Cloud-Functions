@@ -17,8 +17,6 @@ export const onDocCreated = onDocumentCreated("users/{userID}", (event) => {
 
 export const onDocUpdated = onDocumentUpdated("users/{userID}", (event) => {
   const userID = event.params.userID;
-  const userDataBeforeChange = event.data?.before.data();
-  const userDataAfterChange = event.data?.after.data();
 
   logger.info("User Parameters", userID);
 });
