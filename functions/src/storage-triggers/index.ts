@@ -10,5 +10,5 @@ export const onFinalized = onObjectFinalized((event) => {
 export const onArchive = onObjectArchived((event) => {
   const data = event.data;
   logger.info("This is data", data);
-  logger.log("Event object", event);
+  logger.log("Event objects", event);
 });
